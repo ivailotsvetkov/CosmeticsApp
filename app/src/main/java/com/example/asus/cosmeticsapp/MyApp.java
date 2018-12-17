@@ -18,4 +18,4 @@ public class MyApp extends Application {
         super.onCreate();
         ACRA.init(this);
     }
-}
+}//f
