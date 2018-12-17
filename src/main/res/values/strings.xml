@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CosmeticsApp</string>
+    <string name="crash_toast_text">send crash report to developer email</string>
+</resources>
