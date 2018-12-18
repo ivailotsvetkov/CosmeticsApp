@@ -1,4 +1,4 @@
-package com.example.asus.cosmeticsapp;
+package com.example.asus.cosmeticsapp.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,22 +10,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
+
+import com.example.asus.cosmeticsapp.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.internal.Utils;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String BRAND = "brand";
+    public static final String PRODUCT_TYPE = "product_type";
     @BindView(R.id.brand)
     Spinner brand;
     @BindView(R.id.editTextType)
     EditText editTextType;
     @BindView(R.id.buttonSearch)
     Button buttonSearch;
-    public static final String BRAND = "brand";
-    public static final String PRODUCT_TYPE = "product_type";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        String [] brands = new String[]{
+        // Created this array bacause the JSON file was too big to fetch
+        final String[] brands = new String[]{
                 "Almay",
                 "Alva",
                 "Anna sui",
@@ -114,12 +116,13 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.favorites:
-                // star clicked
-                return true;
+                Intent intent=new Intent(this,FavouritesActivity.class);
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

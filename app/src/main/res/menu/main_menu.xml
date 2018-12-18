@@ -4,5 +4,5 @@
         android:id="@+id/favorites"
         android:icon="@drawable/star"
         app:showAsAction="always"
-        android:title="Favorites"/>
+        android:title="@string/favorites"/>
 </menu>

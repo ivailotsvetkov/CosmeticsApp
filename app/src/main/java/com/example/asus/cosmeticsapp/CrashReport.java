@@ -12,10 +12,10 @@ import org.acra.annotation.ReportsCrashes;
         ReportField.ANDROID_VERSION, ReportField.PHONE_MODEL,
         ReportField.CUSTOM_DATA, ReportField.STACK_TRACE, ReportField.LOGCAT},
         mode = ReportingInteractionMode.TOAST, resToastText = R.string.crash_toast_text)
-public class MyApp extends Application {
+public class CrashReport extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
         ACRA.init(this);
     }
-}//f
+}

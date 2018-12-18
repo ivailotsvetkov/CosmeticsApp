@@ -1,4 +1,4 @@
-package com.example.asus.cosmeticsapp;
+package com.example.asus.cosmeticsapp.Views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.example.asus.cosmeticsapp.Adapters.CosmeticsAdapter;
+import com.example.asus.cosmeticsapp.API.ICosmeticService;
+import com.example.asus.cosmeticsapp.Model.Cosmetic;
+import com.example.asus.cosmeticsapp.R;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.asus.cosmeticsapp;
+package com.example.asus.cosmeticsapp.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,14 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.List;
+import com.example.asus.cosmeticsapp.Views.CosmeticsDetails;
+import com.example.asus.cosmeticsapp.Model.Cosmetic;
+import com.example.asus.cosmeticsapp.R;
 
-import butterknife.BindView;
+import java.util.List;
 
 public class CosmeticsAdapter extends RecyclerView.Adapter<CosmeticsAdapter.MyViewHolder> {
     private List<Cosmetic> cosmetics;
     private Context context;
-    public static final String PARAM = "param";
+    public static final String COSMETIC = "cosmetic";
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -50,16 +52,14 @@ public class CosmeticsAdapter extends RecyclerView.Adapter<CosmeticsAdapter.MyVi
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(@Nullable MyViewHolder holder, final int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        //holder.mTextView.setText(cosmetics.get(position).getFact());
+
         TextView name = holder.mTextView.findViewById(R.id.textViewItem);
         name.setText(cosmetics.get(position).getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Details.class);
-                intent.putExtra(PARAM, cosmetics.get(position));
+                Intent intent = new Intent(context, CosmeticsDetails.class);
+                intent.putExtra(COSMETIC, cosmetics.get(position));
                 context.startActivity(intent);
             }
         });
